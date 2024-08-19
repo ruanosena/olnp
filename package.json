@@ -1,0 +1,14 @@
+{
+  "name": "olnp",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "jogo de cartas online",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "ruanosena",
+  "license": "ISC"
+}
