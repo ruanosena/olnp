@@ -57,3 +57,16 @@ export function load(raw) {
 	}
 	return null;
 }
+
+/** @typedef {string} Doc */
+
+/**
+ * @param {string} name
+ * @param {"html" | "amp"} version
+ * @returns {Doc}
+ */
+export function page(name, version) {
+	const fileName = version === "html" ? `${name}.html` : `${name}.amp.html`;
+	const filePath = path.join(basePath, fileName);
+	return fs.readFileSync(filePath);
+}

@@ -1,15 +1,21 @@
 import http from "node:http";
-import { list, load } from "./loader.js";
-import { getUrlFirstPortion } from "./utils.js";
+import { list, load, page } from "./loader.js";
+import { getResourcePage, getUrlFirstPortion } from "./utils.js";
 
 const server = http.createServer((request, response) => {
 	if (request.method == "GET") {
-		if (request.url == "/") {
-			return response.end(JSON.stringify(list()));
+		const path = getUrlFirstPortion(request.url);
+		const resource = getResourcePage(path);
+		if (resource !== null) {
+			response.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+			return response.end(page(resource.name, resource.version));
 		}
-		const card = getUrlFirstPortion(request.url);
-		const payload = load(card);
-		return response.end(JSON.stringify(payload));
+		const payload = load(path);
+		response.writeHead(200, { "Content-Type": "application/json" });
+		// TODO: limitar o acesso a lista
+		return payload !== null
+			? response.end(JSON.stringify(payload))
+			: response.end(JSON.stringify(list()));
 	}
 	return response.end("Olá Mundo!");
 });

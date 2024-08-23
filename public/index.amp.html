@@ -1,0 +1,44 @@
+<!doctype html>
+<html ⚡ lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <link rel="canonical" href="index.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <title>OLNP</title>
+    <script async custom-element="amp-date-display" src="https://cdn.ampproject.org/v0/amp-date-display-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <style amp-custom>
+      .logo { font-family: Impact; display: inline-block; color: red; background-color: yellow; margin: 0 }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="logo">OLNP</h1>
+      
+    </header>
+    <div>
+      <amp-list width="auto"
+        height="100"
+        layout="fixed-height"
+        src="/static/inline-examples/data/amp-list-urls.json">
+        <template type="amp-mustache">
+          <div class="url-entry">
+            <a href="{{url}}">{{title}}</a>
+          </div>
+        </template>
+      </amp-list>
+     
+    </div>
+    <footer>
+      <amp-date-display timestamp-seconds="2147483648" layout="fixed-height" height="20">
+        <template type="amp-mustache">
+          {{iso}}
+        </template>
+      </amp-date-display>
+    </footer>
+  </body>
+</html>

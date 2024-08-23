@@ -3,7 +3,8 @@
   "data": {
     "background": "red",
     "description": "Uma princesa.",
-    "hobby": "Vlogger"
+    "hobby": "Vlogger",
+    "use": "Tablet"
   },
   "metadata": {}
 }
